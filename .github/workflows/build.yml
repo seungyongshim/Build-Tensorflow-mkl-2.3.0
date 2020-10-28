@@ -4,9 +4,6 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: windows-latest
-    defaults:
-      run:
-        shell: msys2 {0}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
@@ -23,6 +20,8 @@ jobs:
           update: true
           install: git mingw-w64-x86_64-toolchain
       - name: CI-Build
+        shell: msys2 {0}
         run: |
           echo 'Running in MSYS2!'
           ./ci-build.sh
+          
