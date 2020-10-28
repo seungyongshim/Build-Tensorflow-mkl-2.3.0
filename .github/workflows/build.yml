@@ -23,7 +23,7 @@ jobs:
         with:
           msystem: MINGW64
           update: true
-          install: git mingw-w64-x86_64-toolchain
+          install: git mingw-w64-x86_64-toolchain patch unzip patch diffutils 
       - name: CI-Build
         shell: msys2 {0}
         run: |
