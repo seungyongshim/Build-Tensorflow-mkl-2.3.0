@@ -27,7 +27,6 @@ jobs:
       - name: CI-Build
         shell: msys2 {0}
         run: |
-          pacman -Sy --noconfirm patch unzip patch diffutils 
           git clone https://github.com/Intel-tensorflow/tensorflow.git
           cd tensorflow
           git checkout r2.3-windows
