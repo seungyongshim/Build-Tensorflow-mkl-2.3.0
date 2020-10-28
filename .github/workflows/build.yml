@@ -31,9 +31,9 @@ jobs:
           cd tensorflow
           git checkout r2.3-windows
           python ./configure.py
-          bazel --output_base=%OneDNN_DIR% build --announce_rc --config=opt \
+          ../bazel.exe --output_base="./output" build --announce_rc --config=opt \
             --config=mkl \
-            --action_env=PATH="<user is expected to expand the system path here>" \
+            --action_env=PATH="./temp" \
             --define=no_tensorflow_py_deps=true \
             tensorflow/tools/pip_package:build_pip_package
           
