@@ -28,10 +28,10 @@ jobs:
         shell: msys2 {0}
         run: |
           git clone https://github.com/Intel-tensorflow/tensorflow.git
-          cp ./bazel.exe tensorflow
-          cp ./WORKSPACE tensorflow
           cd tensorflow
           git checkout r2.3-windows
+          cp ../bazel.exe .
+          cp ../WORKSPACE .
           python ./configure.py
           ./bazel.exe --output_base="./output" build --announce_rc --config=opt \
             --config=mkl \
