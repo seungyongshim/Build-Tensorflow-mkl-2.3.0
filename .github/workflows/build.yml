@@ -27,7 +27,7 @@ jobs:
       - name: CI-Build
         shell: msys2 {0}
         run: |
-          git clone https://github.com/Intel-tensorflow/tensorflow.git
+          git clone --depth 1 --branch r2.3-windows https://github.com/Intel-tensorflow/tensorflow.git
           cd tensorflow
           git checkout r2.3-windows
           python ./configure.py
