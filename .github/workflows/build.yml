@@ -27,7 +27,15 @@ jobs:
       - name: CI-Build
         shell: msys2 {0}
         run: |
-          echo 'Running in MSYS2!'
-          bazel
-          ./ci-build.sh
+          pacman -Szip unzip patch diffutils git
+          git clone https://github.com/Intel-tensorflow/tensorflow.git
+          cd tensorflow
+          git checkout r2.3-windows
+          python ./configure.py
+          bazel --output_base=%OneDNN_DIR% build --announce_rc --config=opt \
+            --config=mkl \
+            --action_env=PATH="<user is expected to expand the system path here>" \
+            --define=no_tensorflow_py_deps=true \
+            tensorflow/tools/pip_package:build_pip_package
+          
           
