@@ -2,3 +2,7 @@
 
 - https://software.intel.com/content/www/us/en/develop/articles/intel-optimization-for-tensorflow-installation-guide.html#wind_B_S
 - https://www.tensorflow.org/install/source_windows
+
+
+## msys2 설치하기
+- https://www.msys2.org/
