@@ -30,7 +30,7 @@ jobs:
       - name: CI-Build
         shell: msys2 {0}
         run: |
-          export PATH=/c/hostedtoolcache/windows/Python/3.7.9/x64/Scripts;/c/hostedtoolcache/windows/Python/3.7.9/x64:$PATH
+          export PATH=/c/hostedtoolcache/windows/Python/3.7.9/x64/Scripts:/c/hostedtoolcache/windows/Python/3.7.9/x64:$PATH
           git clone https://github.com/Intel-tensorflow/tensorflow.git
           cd tensorflow
           git checkout r2.3-windows
