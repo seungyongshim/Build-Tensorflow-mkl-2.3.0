@@ -43,7 +43,7 @@ jobs:
           cp ../bazel.exe .
           cp ../WORKSPACE .
           python ./configure.py
-          ./bazel.exe --output_base="$env:GITHUB_WORKSPACE/output" build --announce_rc --config=opt --config=mkl --define=no_tensorflow_py_deps=true tensorflow/tools/pip_package:build_pip_package
+          ./bazel.exe --output_base="$env:GITHUB_WORKSPACE/output" build --announce_rc --config=opt --experimental_shortened_obj_file_path=true --config=mkl --define=no_tensorflow_py_deps=true tensorflow/tools/pip_package:build_pip_package
       - uses: actions/upload-artifact@v2
         with:
           name: my-artifact
