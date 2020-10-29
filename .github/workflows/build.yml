@@ -33,9 +33,9 @@ jobs:
           cp ../bazel.exe .
           cp ../WORKSPACE .
           python ./configure.py
-          ./bazel.exe --output_base="./output" build --announce_rc --config=opt \
+          ./bazel.exe --output_base="../output" build --announce_rc --config=opt \
             --config=mkl \
-            --action_env=PATH="./temp" \
+            --action_env=PATH="../temp" \
             --define=no_tensorflow_py_deps=true \
             tensorflow/tools/pip_package:build_pip_package
           
