@@ -39,8 +39,7 @@ jobs:
           python ./configure.py
           ./bazel.exe --output_base="../output" build --announce_rc --config=opt \
             --config=mkl \
-            --define=no_tensorflow_py_deps=true \
-            --action_env=PATH="c:/hostedtoolcache/windows/Python/3.7.9/x64/Scripts;c:/hostedtoolcache/windows/Python/3.7.9/x64" \           
+            --define=no_tensorflow_py_deps=true \        
             tensorflow/tools/pip_package:build_pip_package
           
           
