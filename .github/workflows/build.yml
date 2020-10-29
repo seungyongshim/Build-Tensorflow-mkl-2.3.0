@@ -29,7 +29,8 @@ jobs:
           pip install keras_preprocessing==1.0.5 --no-deps
       - name: add-path
         run: |
-          $env:Path = $env:pythonLocation + ";" + $env:Path
+          $env:Path = $pythonLocation + ";" + $env:Path
+          $env:Path
       - name: CI-Build
         shell: msys2 {0}
         run: |
