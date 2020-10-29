@@ -3,6 +3,7 @@ on: [push, pull_request]
 
 jobs:
   build:
+    timeout-minutes: 1440
     runs-on: windows-latest
     steps:
       - name: Check LongPathsEnabled
