@@ -23,6 +23,7 @@ jobs:
       - name: python-dep
         shell: msys2 {0}        
         run: |
+          echo $PATH
           pip install six numpy wheel
           pip install keras_applications==1.0.6 --no-deps
           pip install keras_preprocessing==1.0.5 --no-deps
