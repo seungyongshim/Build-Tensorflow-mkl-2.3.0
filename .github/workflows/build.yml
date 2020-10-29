@@ -27,6 +27,7 @@ jobs:
           pip install keras_preprocessing==1.0.5 --no-deps
       - name: CI-Build
         run: |
+          dir env:
           git clone https://github.com/Intel-tensorflow/tensorflow.git
           cd tensorflow
           git checkout r2.3-windows
