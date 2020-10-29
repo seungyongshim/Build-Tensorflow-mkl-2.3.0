@@ -21,16 +21,12 @@ jobs:
           python-version: '3.7.9' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified        
       - name: python-dep
-        shell: msys2 {0}        
         run: |
-          echo $PATH
           pip install six numpy wheel
           pip install keras_applications==1.0.6 --no-deps
           pip install keras_preprocessing==1.0.5 --no-deps
       - name: CI-Build
-        shell: msys2 {0}
         run: |
-          export PATH=/c/hostedtoolcache/windows/Python/3.7.9/x64/Scripts:/c/hostedtoolcache/windows/Python/3.7.9/x64:$PATH
           git clone https://github.com/Intel-tensorflow/tensorflow.git
           cd tensorflow
           git checkout r2.3-windows
