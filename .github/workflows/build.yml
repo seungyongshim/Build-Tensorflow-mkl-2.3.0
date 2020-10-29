@@ -10,11 +10,6 @@ jobs:
         with:
           python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified        
-      - name: python-dep
-        run: |
-          pip install six numpy wheel
-          pip install keras_applications==1.0.6 --no-deps
-          pip install keras_preprocessing==1.0.5 --no-deps
       - name: Setup Bazel
         uses: abhinavsingh/setup-bazel@v3
         with:
@@ -24,6 +19,12 @@ jobs:
           msystem: MINGW64
           update: true
           install: git mingw-w64-x86_64-toolchain patch unzip patch diffutils 
+      - name: python-dep
+        shell: msys2 {0}        
+        run: |
+          pip install six numpy wheel
+          pip install keras_applications==1.0.6 --no-deps
+          pip install keras_preprocessing==1.0.5 --no-deps
       - name: CI-Build
         shell: msys2 {0}
         run: |
