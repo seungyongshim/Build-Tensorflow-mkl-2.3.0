@@ -2,6 +2,7 @@ workspace(name = "org_tensorflow")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+
 http_archive(
     name = "io_bazel_rules_docker",
     sha256 = "aed1c249d4ec8f703edddf35cbe9dfaca0b5f5ea6e4cd9e83e99f3b0d1136c3d",
@@ -144,3 +145,4 @@ bazel_version_repository(name = "bazel_version")
 load("//third_party/googleapis:repository_rules.bzl", "config_googleapis")
 
 config_googleapis()
+
