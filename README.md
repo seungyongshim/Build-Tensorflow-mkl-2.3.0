@@ -6,3 +6,4 @@
 
 ## msys2 설치하기
 - https://www.msys2.org/docs/ci/
+
