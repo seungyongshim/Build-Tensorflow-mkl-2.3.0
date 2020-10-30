@@ -11,6 +11,7 @@
 - 6시간 넘어가서 타임아웃됨
 
 ## 로컬 빌드 환경 구축
+- `Developer PowerShell for VS 2019` 
 ```
 $env:PATH = "c:\python37;" + $env:PATH
 python ./configure.py
